@@ -12,4 +12,9 @@ public class StoreDto {
     private String storeNm;
     private String storeLoc;
 
+    public StoreDto(Long storeNo, String storeNm, String storeLoc) {
+        this.storeNo = storeNo;
+        this.storeNm = storeNm;
+        this.storeLoc = storeLoc;
+    }
 }
