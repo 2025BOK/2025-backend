@@ -15,10 +15,10 @@ import java.util.List;
 public class StoreEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long STORE_NO; // 가게 PK
+    private Long storeNo; // 가게 PK
 
-    private String STORE_NM; // 가게 이름
-    private String STORE_LOC; // 가게 위치
+    private String storeNm; // 가게 이름
+    private String storeLoc; // 가게 위치
 
     @OneToMany(
         targetEntity = ReviewEntity.class,

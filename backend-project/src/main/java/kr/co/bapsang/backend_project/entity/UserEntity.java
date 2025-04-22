@@ -14,10 +14,10 @@ import java.util.List;
 @Setter
 public class UserEntity {
     @Id
-    private Long USER_NO; // 사용자 PK(행번)
+    private Long userNo; // 사용자 PK(행번)
 
-    private String USER_NM; // 사용자 이름
-    private int USER_CNT; // 리뷰 작성수
+    private String userNm; // 사용자 이름
+    private int userCnt; // 리뷰 작성수
 
     @OneToMany(
             targetEntity = ReviewEntity.class,

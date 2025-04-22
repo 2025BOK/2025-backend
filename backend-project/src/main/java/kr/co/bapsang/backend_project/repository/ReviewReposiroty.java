@@ -7,5 +7,5 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 
 public interface ReviewReposiroty extends CrudRepository<ReviewEntity, Long> {
-    List<ReviewEntity> findReviewsBySTORE_NO(Long STORE_NO);
+    // List<ReviewEntity> findReviewsBystoreNo(Long storeNo);
 }

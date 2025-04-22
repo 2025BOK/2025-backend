@@ -8,19 +8,19 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-@Service
-@RequiredArgsConstructor
+//@Service
+//@RequiredArgsConstructor
 public class StoreService {
-    private final StoreRepository storeRepository;
-
-    public ResponseEntity createStore(StoreDto dto) {
-        StoreEntity newStore = new StoreEntity();
-        newStore.setSTORE_NO(dto.getSTORE_NO());
-        newStore.setSTORE_NM(dto.getSTORE_NM());
-        newStore.setSTORE_LOC(dto.getSTORE_LOC());
-        storeRepository.save(newStore);
-
-        return new ResponseEntity(HttpStatus.OK);
-    }
+//    private final StoreRepository storeRepository;
+//
+//    public ResponseEntity createStore(StoreDto dto) {
+//        StoreEntity newStore = new StoreEntity();
+//        newStore.setSTORE_NO(dto.getSTORE_NO());
+//        newStore.setSTORE_NM(dto.getSTORE_NM());
+//        newStore.setSTORE_LOC(dto.getSTORE_LOC());
+//        storeRepository.save(newStore);
+//
+//        return new ResponseEntity(HttpStatus.OK);
+//    }
 
 }

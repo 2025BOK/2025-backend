@@ -14,14 +14,14 @@ import java.time.LocalDateTime;
 public class ReviewEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long REVIEW_NO; // 리뷰 PK
+    private Long reviewNo; // 리뷰 PK
 
-    private float REVIEW_RATE; // 리뷰 평점
-    private String REVIEW_IMG; // 리뷰 사진
-    private String REVIEW_CTN; // 리뷰 내용
-    private int REVIEW_TYPE1; // 리뷰 조건1(음식 종류)
-    private int REVIEW_TYPE2; // 리뷰 조건2(분위기)
-    private LocalDateTime REVIEW_DATE; // 리뷰 작성일
+    private float reviewRate; // 리뷰 평점
+    private String reviewImg; // 리뷰 사진
+    private String reviewCtn; // 리뷰 내용
+    private int reviewType1; // 리뷰 조건1(음식 종류)
+    private int reviewType2; // 리뷰 조건2(분위기)
+    private LocalDateTime reviewDate; // 리뷰 작성일
 
     @ManyToOne(
             targetEntity = UserEntity.class,
