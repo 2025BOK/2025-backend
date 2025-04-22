@@ -18,6 +18,7 @@ public class UserEntity {
 
     private String userNm; // 사용자 이름
     private int userCnt; // 리뷰 작성수
+    private String password;
 
     @OneToMany(
             targetEntity = ReviewEntity.class,

@@ -11,5 +11,6 @@ public class UserDto {
     private Long userNo;
     private String userNm;
     private int userCnt;
+    private String password;
 
 }

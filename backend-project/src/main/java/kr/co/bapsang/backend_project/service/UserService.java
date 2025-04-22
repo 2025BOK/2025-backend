@@ -14,21 +14,24 @@ public class UserService {
 
     private final UserRepository userRepository;
 
-    // USER - 회원가입
     public ResponseEntity createUser(UserDto dto) {
         UserEntity newUser = new UserEntity();
         newUser.setUserNo(dto.getUserNo());
         newUser.setUserNm(dto.getUserNm());
         newUser.setUserCnt(dto.getUserCnt());
+        newUser.setPassword(dto.getPassword());
         userRepository.save(newUser);
 
         return new ResponseEntity(HttpStatus.OK);
     }
 
-    // USER - 중복체크
-//    public ResponseEntity<Boolean> duplicateCheck(Long USER_NO) {
-//        boolean isDuplicated = userRepository.existsByUSER_NO(USER_NO);
-//
-//        return new ResponseEntity<>(isDuplicated, HttpStatus.OK);
-//    }
+    public boolean authenticateUser(Long userNo, String password) {
+        UserEntity userEntity = userRepository.findByUserNo(userNo);
+
+        return userEntity != null && userEntity.getPassword().equals(password);
+    }
+
+    public boolean duplicateCheck(Long userNo) {
+        return userRepository.existsByUserNo(userNo);
+    }
 }
