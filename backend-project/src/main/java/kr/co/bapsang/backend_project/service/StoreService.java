@@ -27,7 +27,7 @@ public class StoreService {
         newStore.setStoreLoc(dto.getStoreLoc());
         storeRepository.save(newStore);
 
-        return new ResponseEntity(HttpStatus.OK);
+        return new ResponseEntity(HttpStatus.CREATED);
     }
 
     public ResponseEntity updateStore(Long storeNo, StoreDto dto) {
