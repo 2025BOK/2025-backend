@@ -2,7 +2,6 @@ package kr.co.bapsang.backend_project.controller;
 
 import kr.co.bapsang.backend_project.dto.StoreDto;
 import kr.co.bapsang.backend_project.entity.StoreEntity;
-import kr.co.bapsang.backend_project.repository.StoreRepository;
 import kr.co.bapsang.backend_project.service.StoreService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
