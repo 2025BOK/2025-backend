@@ -5,6 +5,7 @@ import kr.co.bapsang.backend_project.dto.ReviewDto;
 import kr.co.bapsang.backend_project.entity.ReviewEntity;
 import kr.co.bapsang.backend_project.service.ReviewService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -15,11 +16,16 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequiredArgsConstructor
 @RequestMapping("review")
 public class ReviewController {
 
     private final ReviewService reviewService;
+
+    public ReviewController(
+            @Autowired ReviewService reviewService
+    ) {
+        this.reviewService = reviewService;
+    }
 
     @PostMapping("{storeNo}/register")
     @CrossOrigin

@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface ReviewReposiroty extends CrudRepository<ReviewEntity, Long> {
     ReviewEntity findByReviewNo(Long reviewNo);
-    List<ReviewEntity> findReviewsByStoreNo(Long storeNo);
+    List<ReviewEntity> findByStoreEntity_StoreNo(Long storeNo);
 }

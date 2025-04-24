@@ -84,7 +84,7 @@ public class ReviewService {
     }
 
     public ResponseEntity<List> readReviewList(Long storeNo) {
-        Iterator<ReviewEntity> iterator = (Iterator<ReviewEntity>) reviewRepository.findReviewsByStoreNo(storeNo);
+        Iterator<ReviewEntity> iterator = (Iterator<ReviewEntity>) reviewRepository.findByStoreEntity_StoreNo(storeNo);
         List<ReviewDto> reviewDtoList = new ArrayList<>();
 
         while(iterator.hasNext()) {
