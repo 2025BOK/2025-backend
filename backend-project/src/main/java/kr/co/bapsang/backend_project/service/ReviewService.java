@@ -48,12 +48,14 @@ public class ReviewService {
         newReview.setReviewType2(dto.getReviewType2());
         newReview.setReviewDate(dto.getReviewDate());
 
-        // 4. 유저 정보, 스토어 정보 세팅
         newReview.setUserEntity(user);
         newReview.setStoreEntity(store);
-
-        // 5. 저장
         reviewRepository.save(newReview);
+
+        // 4. 스토어 reviewType 세팅
+        store.setReviewType1(dto.getReviewType1());
+        store.setReviewType1(dto.getReviewType2());
+        storeRepository.save(store);
 
         return new ResponseEntity<>(HttpStatus.CREATED);
     }

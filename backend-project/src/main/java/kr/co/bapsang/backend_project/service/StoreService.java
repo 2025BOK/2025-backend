@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -79,4 +80,16 @@ public class StoreService {
         return new ResponseEntity<>(storeEntity, HttpStatus.OK);
     }
 
+    public ResponseEntity<?> searchStore(Integer reviewType1, Integer reviewType2) {
+        List<StoreEntity> stores = storeRepository.findByTypes(reviewType1, reviewType2);
+        if (stores.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
+        List<Long> storeList = stores.stream()
+                .map(StoreEntity::getStoreNo)
+                .collect(Collectors.toList());
+
+        return new ResponseEntity<>(storeList, HttpStatus.OK);
+    }
 }

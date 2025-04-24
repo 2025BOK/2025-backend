@@ -20,6 +20,9 @@ public class StoreEntity {
     private String storeNm; // 가게 이름
     private String storeLoc; // 가게 위치
 
+    private int reviewType1;
+    private int reviewType2;
+
     @OneToMany(
         targetEntity = ReviewEntity.class,
             fetch = FetchType.LAZY,

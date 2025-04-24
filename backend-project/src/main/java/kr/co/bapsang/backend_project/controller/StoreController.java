@@ -2,12 +2,14 @@ package kr.co.bapsang.backend_project.controller;
 
 import kr.co.bapsang.backend_project.dto.StoreDto;
 import kr.co.bapsang.backend_project.entity.StoreEntity;
+import kr.co.bapsang.backend_project.repository.StoreRepository;
 import kr.co.bapsang.backend_project.service.StoreService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequiredArgsConstructor
@@ -15,6 +17,7 @@ import java.util.List;
 public class StoreController {
 
     private final StoreService storeService;
+    private StoreRepository storeRepository;
 
     @PostMapping("register")
     @CrossOrigin
@@ -44,6 +47,15 @@ public class StoreController {
     @CrossOrigin
     public ResponseEntity<StoreEntity> getStore(@PathVariable Long storeNo) {
         return storeService.readStore(storeNo);
+    }
+
+    @PostMapping("search")
+    @CrossOrigin
+    public ResponseEntity<?> searchStore(@RequestBody Map<String, Integer> request) {
+        Integer reviewType1 = request.get("reviewType1");
+        Integer reviewType2 = request.get("reviewType2");
+
+        return storeService.searchStore(reviewType1, reviewType2);
     }
 
 }
